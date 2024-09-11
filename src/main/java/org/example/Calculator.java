@@ -1,3 +1,5 @@
+//Calculatorクラス(Calculator.java):計算のロジックを行う。
+// 四則演算を担当し、必要に応じて最大限を計算する。
 package org.example;
 
 import java.math.BigDecimal;

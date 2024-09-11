@@ -1,3 +1,4 @@
+//InputHandlerクラス(InputHandler.java): ユーザーからの入力を処理し、数字や演算の入力を検証する。
 package org.example;
 
 import java.util.Scanner;

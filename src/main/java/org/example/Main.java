@@ -1,3 +1,4 @@
+//Mainクラス(Main.java):入力を受け取り、計算クラスを呼び出して結果を表示する。
 package org.example;
 
 import java.util.Scanner;
