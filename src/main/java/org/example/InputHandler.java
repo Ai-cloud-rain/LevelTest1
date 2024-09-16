@@ -1,3 +1,5 @@
+//InputHandlerクラス(InputHandler.java): ユーザーからの入力を処理し、数字や演算の入力を検証する。
+//Scanner の管理を InputHandler クラスに任せる
 package org.example;
 
 import java.util.Scanner;
@@ -5,8 +7,15 @@ import java.util.InputMismatchException;
 import java.math.BigDecimal;
 
 public class InputHandler {
+  private Scanner scanner;  // Scannerをフィールドとして持つ
+
+  // コンストラクタでScannerを初期化
+  public InputHandler() {
+    this.scanner = new Scanner(System.in);  // Scannerを内部で生成
+  }
+
   // 数字入力用メソッド（小数点対応）
-  public static BigDecimal getDecimalInput(Scanner scanner, String message) {
+  public BigDecimal getDecimalInput(String message) {
     while (true) {
       try {
         System.out.print(message);
@@ -19,7 +28,7 @@ public class InputHandler {
   }
 
   // 演算子入力用メソッド
-  public static String getOperatorInput(Scanner scanner) {
+  public String getOperatorInput() {
     while (true) {
       System.out.print("演算子を入力してください (+, -, *, /): ");
       String operator = scanner.next();
@@ -32,7 +41,7 @@ public class InputHandler {
   }
 
   // 数字入力用メソッド（ゼロ除算のチェックを含む）
-  public static BigDecimal getDecimalInput(Scanner scanner, String message, String operator) {
+  public BigDecimal getDecimalInput(String message, String operator) {
     while (true) {
       try {
         System.out.print(message);
@@ -47,5 +56,10 @@ public class InputHandler {
         scanner.next(); // 無効な入力を消費
       }
     }
+  }
+
+  // Scannerをクローズするメソッド
+  public void close() {
+    scanner.close();
   }
 }
